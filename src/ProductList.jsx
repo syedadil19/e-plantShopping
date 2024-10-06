@@ -1,7 +1,7 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ProductList.css'
 import CartItem from './CartItem';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addItem } from './CartSlice';
 function ProductList() {
     const [showCart, setShowCart] = useState(false); 
@@ -9,12 +9,17 @@ function ProductList() {
     const [addedToCart, setAddedToCart] = useState({});
     const dispatch = useDispatch();
 
+    // // Fetch the cart items from the Redux store
+    // const cartItems = useSelector(state => state.cart.items);
+    // // Calculate the total number of items in the cart
+    // const totalItemsInCart = cartItems.reduce((total, item) => total + item.quantity, 0);
+
     const handleAddToCart = (product) => {
         dispatch(addItem(product));
-        setAddedToCart(prevState => ({
-            ...prevState,
-            [product.name]: true // Set the product name as key and its value to true
-        }));
+        // setAddedToCart(prevState => ({
+        //     ...prevState,
+        //     [product.name]: true // Set the product name as key and its value to true
+        // }));
     };
 
     const plantsArray = [
