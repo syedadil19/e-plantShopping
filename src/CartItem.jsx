@@ -38,7 +38,9 @@ const CartItem = ({ onContinueShopping }) => {
     return (
         <div className="cart-container">
             <div className="cart-icon-with-count">
-                <div className="cart-icon"></div>
+                <svg className="cart-icon" /* SVG Path here */ viewBox="0 0 24 24">
+                    {/* Insert your SVG path data here */}
+                </svg>
                 <span className="item-count">{totalItems}</span> {/* Item count display */}
             </div>
             <h2>Total Cart Amount: ${calculateTotalAmount()}</h2>
